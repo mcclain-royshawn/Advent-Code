@@ -1,19 +1,28 @@
-# For Day 1 Part 1
-# Plan is to create a list of each elf food calorie count and simutaneously add those items together.
+# Part 1
 
-
-with open(r"/Users/royshawnmcclain/Documents/Advent-Code/Advent-Code/2022/Day 1/Sample/Sample-Input.txt", "r") as file:
+with open(r"/Users/royshawnmcclain/Documents/Advent-Code/Advent-Code/2022/Day 1/Actual/Actual-Input", "r") as file:
     data=[]
     for grouping in file.read().split("\n\n"):
         elf_calorie = 0
         for food in grouping.splitlines():
             elf_calorie += int(food)
             data.append(elf_calorie)
-print ("The total calories of each elf are: " +str(data) + "\n\n")
+print("The answer is " + str(max(data)))
+
+
+# Part 2
+with open(r"/Users/royshawnmcclain/Documents/Advent-Code/Advent-Code/2022/Day 1/Actual/Actual-Input", "r") as file:
+    data=[]
+    for grouping in file.read().split("\n\n"):
+        elf_calorie = 0
+        for food in grouping.splitlines():
+            elf_calorie += int(food)
+            data.append(elf_calorie)
+#print ("The total calories of each elf are: " +str(data) + "\n\n")
 
 sorteddata = sorted(data)
 
-print ("The sorted list is " + str(sorteddata))
+#print ("The sorted list is " + str(sorteddata))
 
 top_elf = max(sorteddata)
 second_elf = sorteddata[-2]
